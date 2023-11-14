@@ -1,9 +1,10 @@
 # Crawl_Data_DS102_LT
 
 Installation :
-  Visual studio code
-  npm install puppeteer
-
+  <space>Visual studio code<space>
+  <space>npm install puppeteer<space>
+  
+  
 
 Config :
   <img width="1221" alt="image" src="https://github.com/LeeThanh24/Crawl_Data_DS102_LT/assets/94585743/6eb2c6c3-01ac-449d-9626-3905b463bb82">
