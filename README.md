@@ -14,7 +14,9 @@ npm install puppeteer
   Vào google maps , tìm một bệnh viện và chuyển sang tab bài đánh giá và copy url vào trong url vào code
   
   <img width="452" alt="image" src="https://github.com/LeeThanh24/Crawl_Data_DS102_LT/assets/94585743/e070e407-0eda-4b1d-a765-d2235e3a254a">
+  
   <space><space>
+    
   Chọn số lượng comment muốn crawl
 
 **Run**
