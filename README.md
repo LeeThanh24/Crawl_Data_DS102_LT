@@ -20,5 +20,7 @@ npm install puppeteer
   Chọn số lượng comment muốn crawl
 
 **Run**
+
 <space><space>
-  Chuột phải chọn run trong visual studio code 
+  
+Chuột phải chọn run trong visual studio code 
