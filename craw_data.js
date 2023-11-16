@@ -36,9 +36,9 @@ async function extractItems(page) {
       };
     });
   });
-//   reviews.forEach((review) => {
-//     console.log(review.images);
-//   });
+  //   reviews.forEach((review) => {
+  //     console.log(review.images);
+  //   });
   return reviews;
 }
 
@@ -60,10 +60,9 @@ const scrollPage = async (page, scrollContainer, itemTargetCount) => {
   return items;
 };
 
-const getMapsData = async (number ) => {
+const getMapsData = async (number, link, name) => {
   try {
-    let url =
-      "https://www.google.com/maps/place/B%E1%BB%87nh+vi%E1%BB%87n+B%E1%BB%87nh+Nhi%E1%BB%87t+%C4%91%E1%BB%9Bi/@10.7526686,106.6763441,17z/data=!4m8!3m7!1s0x31752f0186de2bb7:0x1392b898bea9c54!8m2!3d10.7526686!4d106.678919!9m1!1b1!16s%2Fg%2F11f8fyw5l5?entry=ttu";
+    let url = link;
     browser = await puppeteer.launch({
       args: ["--disabled-setuid-sandbox", "--no-sandbox"],
       headless: false,
@@ -120,13 +119,12 @@ const getMapsData = async (number ) => {
       const rating = item["rating"];
       const images = item["images"];
       const review = item["review"];
-        
+
       let finalImagesArray = [];
       for (let i = 0; i < images.length; i++) {
         finalImagesArray.push(images[i]["thumbnail"]);
       }
-      if (images.length ==0 )
-      {
+      if (images.length == 0) {
         finalImagesArray = "null";
       }
       let object = {
@@ -135,7 +133,7 @@ const getMapsData = async (number ) => {
         review: review,
         images: finalImagesArray,
       };
-      dataJson.push( object);
+      dataJson.push(object);
       //   console.log(object);
 
       //   item.images = ratings[index].images;
@@ -143,18 +141,19 @@ const getMapsData = async (number ) => {
     console.log(dataJson);
     var dictstring = JSON.stringify(dataJson);
     // console.log(dictstring)
-    var fs = require('fs');
-    fs.writeFile("Nhiet_Doi.json", dictstring, function(err, result) {
-        if(err) console.log('error', err);
+    var fs = require("fs");
+    fs.writeFile(name, dictstring, function (err, result) {
+      if (err) console.log("error", err);
     });
 
-    
-   
     await browser.close();
   } catch (e) {
     console.log(e);
   }
 };
 
-let number = 500; // so luong comment muon lay 
-getMapsData(number);
+let number = 2800; // so luong comment muon lay
+let link =
+  "https://www.google.com/maps/place/B%E1%BB%8Bnh+vi%E1%BB%87n+Ch%E1%BB%A3+R%E1%BA%ABy/@10.7578369,106.6569462,17z/data=!4m8!3m7!1s0x31752ef1efebf7d7:0x9014ce53b8910a58!8m2!3d10.7578369!4d106.6595211!9m1!1b1!16s%2Fm%2F02rw0f9?entry=ttu"; //duong link
+let name = "Cho_ray.json"; // ghi ten file.json
+getMapsData(number, link, name);
