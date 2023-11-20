@@ -1,6 +1,7 @@
 const { type } = require("os");
 const puppeteer = require("puppeteer");
 
+let count = 1;
 async function extractItems(page) {
   const reviews = await page.evaluate(() => {
     return Array.from(document.querySelectorAll(".jftiEf")).map((el) => {
@@ -67,6 +68,7 @@ const getMapsData = async (number, link, name) => {
       args: ["--disabled-setuid-sandbox", "--no-sandbox"],
       headless: false,
     });
+
     const [page] = await browser.pages();
 
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
@@ -152,7 +154,7 @@ const getMapsData = async (number, link, name) => {
   }
 };
 
-let number = 2800; // so luong comment muon lay
+let number = 1100; // so luong comment muon lay trong khoang  [1,1000]
 let link =
   "https://www.google.com/maps/place/B%E1%BB%8Bnh+vi%E1%BB%87n+Ch%E1%BB%A3+R%E1%BA%ABy/@10.7578369,106.6569462,17z/data=!4m8!3m7!1s0x31752ef1efebf7d7:0x9014ce53b8910a58!8m2!3d10.7578369!4d106.6595211!9m1!1b1!16s%2Fm%2F02rw0f9?entry=ttu"; //duong link
 let name = "Cho_ray.json"; // ghi ten file.json
