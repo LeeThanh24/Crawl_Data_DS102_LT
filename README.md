@@ -11,7 +11,7 @@
 
   <space><space>
 
--npm install puppeteer
+-npm install puppeteer (in terminal)
   
   
 
