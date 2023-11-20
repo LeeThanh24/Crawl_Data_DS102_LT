@@ -3,11 +3,15 @@
 **Installation** :
 <space><space>
 
-Visual studio code
+-Nodejs : https://nodejs.org/en
+
+<space><space>
+
+-Visual studio code
 
   <space><space>
 
-npm install puppeteer
+-npm install puppeteer
   
   
 
@@ -27,4 +31,4 @@ npm install puppeteer
 
 <space><space>
   
-Chuột phải chọn run trong visual studio code 
+Chuột phải chọn run trong visual studio code hoặc node craw_data.js trong ở terminal
